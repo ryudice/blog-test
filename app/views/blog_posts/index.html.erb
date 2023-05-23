@@ -1,0 +1,8 @@
+<h1>BlogPosts</h1>
+
+<% @documents.each do |post| %>
+  <article>
+  <h1><%= link_to post['blogpost.title'].as_text(), blog_post_path(post.id) %></h1>
+  <p><%= post['blogpost.body'].as_html(link_resolver()).html_safe  %></p>
+  </article>
+<%end%>
